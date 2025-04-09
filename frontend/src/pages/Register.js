@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import{ registerUser } from '../services/api';
-import '../styles/Register.css'; // Import your CSS file for styling
+import { registerUser } from '../services/api';
+import '../styles/Register.css';
 import Toast from '../components/Toast';
 
 const Register = () => {
@@ -15,22 +15,18 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await registerUser({ name, email, password });
-  
-      // Store JWT token in localStorage after successful registration
-      localStorage.setItem('token', data.token); // Store JWT Token
-      localStorage.setItem('user', JSON.stringify(data.user)); // Store user data
-  
+      await registerUser({ name, email, password });
+
+      // Do NOT log the user in or store token here
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
         navigate('/login');
-      }, 3000); // 3 seconds before navigating
+      }, 3000);
     } catch (error) {
       alert(error.response?.data?.message || 'Registration failed');
     }
   };
-  
 
   return (
     <>
@@ -44,7 +40,7 @@ const Register = () => {
       <div className="register-container">
         <div className="register-box">
           <div className="register-left">
-            <div className="wave-bg"></div> {/* SVG background */}
+            <div className="wave-bg"></div>
             <div className="register-left-content">
               <h1>WELCOME TO</h1>
               <h2>WASH 'N GO</h2>
