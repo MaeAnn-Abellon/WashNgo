@@ -153,11 +153,10 @@ Then open your browser and go to:
 - *Wash & Fold* – ₱110 per kilo  
 - *Wash & Iron* – ₱120 per kilo  
 - *Dry Clean* – ₱150 per kilo  
-- *Full Service (Pickup & Delivery)* – ₱250 per kilo  
-
+- *Full Service (Pickup & Delivery)* – ₱250 per kilo 
 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-repo/WashNgo.git
+git clone https://github.com/MaeAnn-Abellon/WashNgo.git
 cd WashNgo
